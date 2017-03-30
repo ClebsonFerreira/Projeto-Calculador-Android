@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Calculadora</string>
+    <string name="raiz">&#8730;</string>
+    <string name="xy">&#121;</string>
 </resources>
