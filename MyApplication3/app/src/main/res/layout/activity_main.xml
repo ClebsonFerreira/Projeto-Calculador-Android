@@ -8,14 +8,13 @@
 
     <TextView
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:id="@+id/resultado"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:scrollHorizontally="true"
-        android:textSize="100dp"
         android:layout_marginTop="10dp"
         android:layout_gravity="center"
-        android:background="#ccc"/>
+        android:background="#fff"/>
 
 
     <LinearLayout
@@ -56,7 +55,8 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="%"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:id="@+id/porcentagem"/>
 
     </LinearLayout>
 
@@ -85,21 +85,21 @@
             android:layout_height="60dp"
             android:text="6"
             android:id="@+id/num6"
-            android:textSize="30dp"
-            android:onClick="Soma"/>
+            android:textSize="30dp"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="-"
             android:textSize="30dp"
-            />
+            android:id="@+id/subtracao"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="@string/raiz"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:id="@+id/raiz"/>
 
     </LinearLayout>
 
@@ -134,14 +134,16 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="x"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:id="@+id/mutiplicacao"/>
 
         <Button
 
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="X²"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:id="@+id/exponencial"/>
 
     </LinearLayout>
 
@@ -155,26 +157,29 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="."
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:id="@+id/ponto"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="0"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:id="@+id/num0"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="00"
             android:textSize="30dp"
-            android:onClick="Soma"/>
+            android:id="@+id/num00"/>
 
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="/"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:id="@+id/divisao"/>
 
         <Button
 
@@ -182,8 +187,22 @@
             android:layout_height="60dp"
             android:text="="
             android:background="#cc00"
-            android:textSize="30dp"/>
+            android:textSize="30dp"
+            android:id="@+id/igual"/>
 
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:text="c"
+            android:textSize="30dp"
+            android:id="@+id/clear"/>
     </LinearLayout>
 
 </LinearLayout>
