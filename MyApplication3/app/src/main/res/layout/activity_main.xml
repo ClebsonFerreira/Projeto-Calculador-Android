@@ -20,6 +20,12 @@
         android:padding="4dp"
         android:layout_gravity="center"/>
 
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/invisivel"
+        />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,6 +41,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="num7"
             android:id="@+id/num7"/>
 
         <Button
@@ -45,6 +52,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="num8"
             android:id="@+id/num8"/>
 
         <Button
@@ -55,6 +63,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="num9"
             android:id="@+id/num9"/>
 
         <Button
@@ -65,6 +74,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="btnSoma"
             android:id="@+id/btnSoma"/>
 
         <Button
@@ -75,6 +85,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="btnPorcent"
             android:id="@+id/porcentagem"/>
 
     </LinearLayout>
@@ -93,6 +104,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="num4"
             android:id="@+id/num4"/>
 
         <Button
@@ -102,6 +114,7 @@
             android:background="#fff"
             android:textColor="#000"
             android:layout_margin="1dp"
+            android:onClick="num5"
             android:id="@+id/num5"
             android:textSize="30dp"/>
 
@@ -112,6 +125,7 @@
             android:background="#fff"
             android:textColor="#000"
             android:layout_margin="1dp"
+            android:onClick="num6"
             android:id="@+id/num6"
             android:textSize="30dp"/>
 
@@ -123,6 +137,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="btnSubtracao"
             android:id="@+id/subtracao"/>
 
         <Button
@@ -133,6 +148,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="btnRaiz"
             android:id="@+id/raiz"/>
 
     </LinearLayout>
@@ -144,55 +160,60 @@
         android:gravity="center_horizontal">
 
         <Button
+            android:id="@+id/num1"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_margin="1dp"
+            android:background="#fff"
+            android:onClick="num1"
             android:text="1"
-            android:background="#fff"
             android:textColor="#000"
-            android:layout_margin="1dp"
-            android:textSize="30dp"
-            android:id="@+id/num1"/>
+            android:textSize="30dp" />
 
         <Button
+            android:id="@+id/num2"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_margin="1dp"
+            android:background="#fff"
+            android:onClick="num2"
             android:text="2"
-            android:background="#fff"
             android:textColor="#000"
-            android:layout_margin="1dp"
-            android:textSize="30dp"
-            android:id="@+id/num2"/>
+            android:textSize="30dp" />
 
         <Button
+            android:id="@+id/num3"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_margin="1dp"
+            android:background="#fff"
+            android:onClick="num3"
             android:text="3"
-            android:background="#fff"
             android:textColor="#000"
-            android:layout_margin="1dp"
-            android:textSize="30dp"
-            android:id="@+id/num3"/>
+            android:textSize="30dp" />
 
         <Button
+            android:id="@+id/mutiplicacao"
             android:layout_width="70dp"
             android:layout_height="70dp"
+            android:layout_margin="1dp"
+            android:background="#20B2AA"
+            android:onClick="btnMulti"
             android:text="x"
-            android:background="#20B2AA"
             android:textColor="#000"
-            android:layout_margin="1dp"
-            android:textSize="30dp"
-            android:id="@+id/mutiplicacao"/>
+            android:textSize="30dp" />
 
         <Button
 
+            android:id="@+id/exponencial"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:text="X^"
-            android:background="#20B2AA"
-            android:textColor="#000"
             android:layout_margin="1dp"
-            android:textSize="30dp"
-            android:id="@+id/exponencial"/>
+            android:background="#20B2AA"
+            android:text="X^"
+            android:onClick="btnExpoente"
+            android:textColor="#000"
+            android:textSize="30dp" />
 
     </LinearLayout>
 
@@ -220,6 +241,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="num0"
             android:id="@+id/num0"/>
 
         <Button
@@ -230,6 +252,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="num00"
             android:id="@+id/num00"/>
 
         <Button
@@ -240,6 +263,7 @@
             android:textColor="#000"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="btnDivisao"
             android:id="@+id/divisao"/>
 
         <Button
@@ -251,6 +275,7 @@
             android:textColor="#0000cc"
             android:layout_margin="1dp"
             android:textSize="30dp"
+            android:onClick="btnigual"
             android:id="@+id/igual"/>
 
     </LinearLayout>
@@ -269,6 +294,7 @@
             android:background="#20B2AA"
             android:textColor="#000"
             android:textSize="30dp"
+            android:onClick="btnClear"
             android:id="@+id/clear"/>
     </LinearLayout>
 

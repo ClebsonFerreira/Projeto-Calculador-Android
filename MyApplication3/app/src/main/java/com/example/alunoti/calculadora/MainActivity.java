@@ -1,161 +1,264 @@
 package com.example.alunoti.calculadora;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity {
+import br.com.emmersonapp.minhacalculadora.R;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+public class MainActivity extends Activity implements View.OnClickListener {
+
+    //Inicializado, recebe os numeros
+
+    Double resultado;
+    Double btnnumeros;
+    Double total ;
+    Double  valorglobal;
+
+    String operacao;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final TextView tela=(TextView)findViewById(R.id.resultado);
-        Button btnSoma=(Button)findViewById(R.id.btnSoma);
-        Button btnSubtracao=(Button)findViewById(R.id.subtracao);
-        Button btnDivisao=(Button)findViewById(R.id.divisao);
-        Button btnMultiplicarcao=(Button)findViewById(R.id.mutiplicacao);
-        Button btnPorcentagem=(Button)findViewById(R.id.porcentagem);
-        Button btnExponencial=(Button)findViewById(R.id.exponencial);
-        Button btnclear=(Button)findViewById(R.id.clear);
-        Button btnraiz=(Button)findViewById(R.id.raiz);
-        Button btnIgual=(Button)findViewById(R.id.igual);
-        Button btnnun7=(Button)findViewById(R.id.num7);
-        Button btnnun8=(Button)findViewById(R.id.num8);
-        Button btnnun9=(Button)findViewById(R.id.num9);
-        Button btnnun4=(Button)findViewById(R.id.num4);
-        Button btnnun5=(Button)findViewById(R.id.num5);
-        Button btnnun6=(Button)findViewById(R.id.num6);
-        Button btnnun1=(Button)findViewById(R.id.num1);
-        Button btnnun2=(Button)findViewById(R.id.num2);
-        Button btnnun3=(Button)findViewById(R.id.num3);
-        Button btnponto=(Button)findViewById(R.id.ponto);
-        Button btnnun0=(Button)findViewById(R.id.num0);
-        Button btnnun00=(Button)findViewById(R.id.num00);
-
-        btnSoma.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"+");
-            }
-        });
-        btnclear.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                tela.setText("");
-            }
-        });
-        btnSubtracao.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"-");
-            }
-        });
-
-        btnDivisao.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"/");
-            }
-        });
-        btnMultiplicarcao.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"*");
-            }
-        });
-        btnPorcentagem.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"%");
-            }
-        });
-        btnExponencial.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"^");
-            }
-        });
-
-        btnIgual.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                tela.setText("botão igual pressionado");
-            }
-        });
+        final TextView tela = (TextView) findViewById(R.id.resultado);
 
 
-        btnnun7.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"7");
-            }
-        });
-        btnnun8.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"8");
-            }
-        });
-        btnnun9.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"9");
-            }
-        });
-        btnnun4.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"4");
-            }
-        });
-        btnnun5.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"5");
-            }
-        });
-        btnnun6.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"6");
-            }
-        });
-        btnnun3.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"3");
-            }
-        });
-        btnnun2.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"2");
-            }
-        });
-        btnnun1.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"1");
-            }
-        });
-        btnponto.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+".");
-            }
-        });
-        btnnun0.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"0");
-            }
-        });
-        btnnun00.setOnClickListener(new Button.OnClickListener(){
-            public void onClick(View v){
-                String resultado = tela.getText().toString();
-                tela.setText(resultado+"00");
-            }
-        });
+    }
+    public void num0(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 0;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num00(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        tela.setText(global+"00");
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num1(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 1;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num2(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 2;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num3(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 3;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num4(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 4;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num5(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 5;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num6(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 6;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num7(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 7;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num8(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 8;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void num9(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        String global = tela.getText().toString();
+        int inteiro = 9;
+        tela.setText(global+inteiro);
+        String aux = tela.getText().toString();
+        btnnumeros = Double.parseDouble(aux);
+    }
+
+    public void btnSoma(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        tela.setText("");
+        operacao = "soma";
+        //tela.setText(btnnumeros+"+");
+        if(resultado !=null){
+            total = resultado;
+        }else {
+            total = btnnumeros;
+        }
+    }
+
+    public void btnSubtracao(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        tela.setText("");
+        operacao = "menos";
+        //tela.setText(btnnumeros+"-");
+        if(resultado !=null){
+            total = resultado;
+        }else {
+            total = btnnumeros;
+        }
+    }
+
+    public void btnMulti(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        tela.setText("");
+        operacao = "multi";
+        //tela.setText(btnnumeros+"*");
+        if(resultado !=null){
+            total = resultado;
+        }else {
+            total = btnnumeros;
+        }
+    }
+
+    public void btnDivisao(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        tela.setText("");
+        operacao = "divisao";
+        //tela.setText(btnnumeros+"/");
+        if(resultado !=null){
+            total = resultado;
+        }else {
+            total = btnnumeros;
+        }
+    }
+
+    public void btnPorcent(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        operacao = "porcentagem";
+        //tela.setText(btnnumeros+"/");
+        if(total==null){
+            total = btnnumeros;
+        }else {
+            btnnumeros = btnnumeros;
+
+        }
+    }
+
+    public void btnRaiz(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        operacao = "raiz";
+        //tela.setText(btnnumeros+"sqr");
+        resultado=Math.sqrt(btnnumeros);
+        tela.setText(String.valueOf(resultado));
+    }
+
+    public void btnExpoente(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        operacao = "expoente";
+        if(total==null){
+            total = btnnumeros;
+        }else {
+            btnnumeros = btnnumeros;
+
+        }
+    }
+
+    public void btnClear(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+        total = null;
+        btnnumeros = null;
+        resultado = null;
+        tela.setText("");
+    }
+
+    public void btnigual(View view) {
+        TextView tela = (TextView) findViewById(R.id.resultado);
+
+        switch (operacao) {
+            case "soma":
+                resultado = total + btnnumeros;
+                tela.setText(String.valueOf(resultado));
+                break;
+
+            case "menos":
+                resultado = total - btnnumeros;
+                tela.setText(String.valueOf(resultado));
+                break;
+
+            case "multi":
+                resultado = total * btnnumeros;
+                tela.setText(String.valueOf(resultado));
+                break;
+
+            case "divisao":
+                resultado = total / btnnumeros;
+                tela.setText(String.valueOf(resultado));
+                break;
+
+            case "porcentagem":
+                resultado = (total * btnnumeros)/100;
+                tela.setText(String.valueOf(resultado));
+                break;
+
+            case "raiz":
+                tela.setText("Operação Invalida");
+                break;
+
+            case "expoente":
+                resultado = Math.pow(total, btnnumeros);
+                tela.setText(String.valueOf(resultado));
+                break;
+
+        }
+    }
+
+    public void onClick(View v) {
+
+
     }
 }
