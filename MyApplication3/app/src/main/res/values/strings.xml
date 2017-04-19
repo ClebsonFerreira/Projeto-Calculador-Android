@@ -2,4 +2,5 @@
     <string name="app_name">MinhaCalculadora</string>
     <string name="raiz">&#8730;</string>
     <string name="xy">&#121;</string>
+    <string name="apaga">&#8678;</string>
 </resources>
